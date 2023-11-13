@@ -1,0 +1,19 @@
+Here is a sample code in Java to play a notification alert sound in a chat app:
+```java
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
+
+public class SoundUtils {
+    public static void beep(int delay) {
+        Timer timer = new Timer(delay, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Toolkit.getDefaultToolkit().beep();
+            }
+        });
+        timer.setRepeats(false);
+        timer.start();
+    }
+}
